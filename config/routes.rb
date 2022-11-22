@@ -2,12 +2,10 @@ Rails.application.routes.draw do
   devise_for :users
   root to: "pages#home"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-  resources :cars, only: %i[show index]
+  resources :cars, only: %i[new show index]
 
   # Defines the root path route ("/")
   # root "articles#index"
 
-  get '/cars', to: 'cars#index'
-  get '/cars/new', to: 'cars#new'
   post '/cars', to: 'cars#create'
 end
