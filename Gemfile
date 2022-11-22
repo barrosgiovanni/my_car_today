@@ -79,3 +79,7 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
+# to use cloudinary keys
+gem "dotenv-rails", groups: [:development, :test]
+gem "cloudinary"
