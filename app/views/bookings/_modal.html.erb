@@ -11,7 +11,7 @@
 
       <%= simple_form_for booking do |f| %>
         <div class="modal-body">
-          <%= f.association :car, collection: Car.all.order(:price, :brand, :model, :year, :color, :category), prompt: "Select a ", input_html: { data: { controller: "tom-select" } } %>
+          <%= f.association :car, collection: Car.all.order(:price, :brand, :model, :year, :color, :category, :photos), prompt: "Select a ", input_html: { data: { controller: "tom-select" } } %>
           <%= f.input :comment, placeholder: "What's car do you want rent?" %>
         </div>
         <div class="modal-footer">

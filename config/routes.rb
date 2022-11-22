@@ -7,6 +7,6 @@ Rails.application.routes.draw do
   # root "articles#index"
 
   resources :cars do
-    resources :bookings, only: [:new]
+    resources :bookings, only: [:new, :create]
   end
 end
