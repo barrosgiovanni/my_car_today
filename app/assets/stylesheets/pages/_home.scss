@@ -1,11 +1,7 @@
 // Specific CSS for your home-page
 
-* {
-  border: 1px solid red;
-}
-
 .headings {
-  margin: 30px 0 30px 0;
+  margin: 60px 0 60px 0;
   text-align: center;
 }
 
@@ -27,11 +23,29 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-gap: 20px;
+  border-radius: 30px;
 }
 
-.card-category {
-  width: 16rem;
-  height: 16rem;
-  margin: 0 auto;
+.card-link {
+  text-decoration: none;
+  color: black;
+}
+
+.card-link .card {
   border-radius: 10px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.5);
+}
+
+.card-link .card:hover {
+  box-shadow: 0 1px 3px rgb(0,0,0);
+}
+
+.card-img {
+  width: 100;
+  margin: 20px 0 20px 0;
+}
+
+.card-body p {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
 }
