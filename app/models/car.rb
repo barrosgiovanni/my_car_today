@@ -1,6 +1,8 @@
 class Car < ApplicationRecord
-  belongs_to :user
-  has_many :bookings
+  belongs_to :user, dependent: :destroy
+  has_many :bookings, dependent: :destroy
+
+  has_one_attached :photo
 
   validates :model, presence: true
   validates :brand, presence: true
@@ -8,7 +10,4 @@ class Car < ApplicationRecord
   validates :color, presence: true
   validates :category, presence: true
   validates :price, presence: true
-
-  has_many_attached :photos
-
 end
