@@ -9,8 +9,9 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.car = @car
     @booking.user = current_user
-    if @booking.save
-      redirect_to root_path
+    @booking.status = 'pending'
+    if @booking.save!
+      redirect_to root_path, notice: "Booking successfully created!"
     else
       render :new
     end
@@ -25,6 +26,6 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:location, :status, :pick_up_date, :drop_of_date)
+    params.require(:booking).permit(:location, :pick_up_date, :drop_of_date)
   end
 end
