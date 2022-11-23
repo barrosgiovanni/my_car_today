@@ -5,7 +5,6 @@ skip_before_action :authenticate_user!, only: [:index, :show]
     @cars = Car.all
   end
 
-
   def show
     @car = Car.find(params[:id])
   end
@@ -23,6 +22,6 @@ skip_before_action :authenticate_user!, only: [:index, :show]
   private
 
   def car_params
-    params.require(:car).permit(:price, :brand, :model, :year, :color, :category, photos: [])
+    params.require(:car).permit(:price, :brand, :model, :year, :color, :category, :photo)
   end
 end
