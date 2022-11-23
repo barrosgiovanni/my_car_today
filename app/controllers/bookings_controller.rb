@@ -8,9 +8,7 @@ class BookingsController < ApplicationController
     @car = Car.find(params[:car_id])
     @booking = Booking.new(booking_params)
     @booking.car = @car
-
     @booking.user = current_user
-    
     if @booking.save
       redirect_to root_path
     else
