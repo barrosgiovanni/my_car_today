@@ -9,9 +9,8 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.car = @car
 
-    # assign this booking to the correct user
     @booking.user = current_user
-
+    
     if @booking.save
       redirect_to root_path
     else

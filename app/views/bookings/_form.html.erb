@@ -1,12 +1,8 @@
-<h3>Let's booking a car</h3>
 
-  <%= simple_form_for([car, booking]) do |f| %>
-    <%= f.input :pick_up_date %>
-    <%= f.input :drop_of_date %>
-    <%# <%= f.association :car, collection: Car.all.order(:price, :brand, :model, :year, :color, :category, :photos), prompt: "Select a ", input_html: { data: { controller: "tom-select" } } %> %>
-    <%# <%= f.input :comment, placeholder: "What's car do you want rent?" %>
-    <%= f.input :location %>
-    <%= f.input :status %> %>
-    <%= f.submit "Add a booking", class: "btn btn-flat" %>
-    <button type="button" class="btn btn-cancel" data-bs-dismiss="modal">Back</button>
-  <% end %>
+<%= simple_form_for([car, booking]) do |f| %>
+<%= f. input :pick_up_date %>
+<%= f. input :drop_of_date %>
+<%= f. input :location %>
+<%= f. submit %>
+<% end %>
+

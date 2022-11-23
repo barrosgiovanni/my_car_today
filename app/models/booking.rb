@@ -47,5 +47,4 @@ class Booking < ApplicationRecord
   validates :drop_of_date, presence: true
   validates :location, presence: true
   validates :status, presence: true
-
 end
