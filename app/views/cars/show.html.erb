@@ -1,24 +1,15 @@
 <div class="container">
   <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://i.pinimg.com/736x/e9/fc/43/e9fc43d07157d2dcfb6cb7eddc0e55f1.jpg);">
-    <h1><%= @car.brand %></h1>
-    <p></p>
     <a class="btn btn-flat" href="#"></a>
   </div>
   <div class="card-show">
     <div class="card-show-infos">
-      <h2><%= @car.model %></h2>
-      <p><%= @car.category%><%=@car.year%><%=@car.color %></p>
+    <div class="card-show-header">
+      <h2><%= @car.model.capitalize %> <%= @car.brand.capitalize  %></h2>
       <h2 class="card-show-pricing">£<%= @car.price %></h2>
-    <div>
-  <div>
-    <div class="footer">
-      <div class="footer-links">
-        <a href="#"><i class="fab fa-github"></i></a>
-      </div>
     </div>
-  </div>
-  <div class="footer-copyright">
-    This footer is made with <i class="fas fa-heart"></i> at Le Wagon
-  <%= render 'bookings/form', car: @car, booking: @booking %>
+      <p>Category: <%= @car.category.capitalize%> | Year: <%=@car.year%> | Color: <%=@car.color.capitalize%> </p>
+    </div>
+     <%= render 'bookings/form', car: @car, booking: @booking %>
   </div>
 </div>
