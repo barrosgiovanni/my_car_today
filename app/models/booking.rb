@@ -42,4 +42,10 @@ class Booking < ApplicationRecord
   #     @user.send_message_via_email(message)
   #   end
   # end
+
+  validates :pick_up_date, presence: true
+  validates :drop_of_date, presence: true
+  validates :location, presence: true
+  validates :status, presence: true
+
 end
