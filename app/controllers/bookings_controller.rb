@@ -8,7 +8,7 @@ class BookingsController < ApplicationController
     @car = Car.find(params[:car_id])
     @booking = Booking.new(booking_params)
     @booking.car = @car
-    @booking.status = "Peding"
+    @booking.status = "Pending"
 
     @booking.user = current_user
 
