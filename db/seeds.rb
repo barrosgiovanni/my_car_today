@@ -72,3 +72,4 @@ captur.photo.attach(io: file, filename: "captur.png", content_type: "image/png")
 captur.save!
 
 puts "Finished!"
+

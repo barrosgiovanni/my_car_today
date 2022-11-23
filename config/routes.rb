@@ -2,10 +2,12 @@ Rails.application.routes.draw do
   devise_for :users
   root to: "pages#home"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-  resources :cars, only: %i[show index]
+  resources :cars, only: %i[new show index]
 
   # Defines the root path route ("/")
   # root "articles#index"
+
+ 
 
   resources :cars do
     resources :bookings, only: [:new, :create]
@@ -13,4 +15,5 @@ Rails.application.routes.draw do
 
   resources :bookings, only: :destroy
   # post "booking/incoming", to: 'booking#accept_or_reject', as: 'incoming'
+
 end
