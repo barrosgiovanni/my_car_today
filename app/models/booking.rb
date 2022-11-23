@@ -2,9 +2,6 @@ class Booking < ApplicationRecord
   belongs_to :user
   belongs_to :car
 
-  validates :name, presence: true
-  validates :email, presence: true
-
   # enum status: [ :pending, :confirmed, :rejected ]
 
   # def notify_host(force = true)
