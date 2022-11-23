@@ -5,22 +5,26 @@
 
 <div class="cards-container">
 
-  <% @cars.each do |car| %>
-
     <div class="cards">
 
-      <div class="card" style="width: 18rem;">
-        <img src="https://img.freepik.com/psd-gratuitas/carro-em-miniatura-sedan_53876-84522.jpg?w=996&t=st=1669144574~exp=1669145174~hmac=4a38f31a8ea9ddccae6287aca5a0b90cddae9420baed84c12a99f0306f9b2fa5" class="card-img-top" alt="...">
-        <div class="card-body">
-          <p><%= car.brand %><%= car.model %></p>
-          <p><%= car.year %></p>
-          <p><%= car.category %></p>
-          <p><%= car.price %> per day</p>
-        </div>
-      </div>
+      <% @cars.each do |car| %>
+
+        <%= link_to car_path(car), class: "card-link" do %>
+
+          <div class="card" style= "width: 18rem;">
+            <%= cl_image_tag car.photo.key, class: "card-img", crop: :fill %>
+            <div class="card-body">
+              <p><%= car.brand %> <%= car.model %></p>
+              <p><%= car.year %></p>
+              <p><%= car.category %></p>
+              <p>$<%= car.price %> per day</p>
+            </div>
+          </div>
+        <% end %>
+
+
+      <% end %>
 
     </div>
-
-  <% end %>
 
 </div>

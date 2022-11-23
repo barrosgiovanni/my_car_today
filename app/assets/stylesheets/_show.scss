@@ -1,7 +1,9 @@
 .banner {
   background-size: cover;
   background-position: center;
-  padding: 150px 0;
+  padding: 300px 0;
+  border-radius: 4px;
+  margin-top: 16px;
 }
 
 .banner h1 {
@@ -84,4 +86,16 @@
 }
 .footer .fa-heart {
   color: #D23333;
+}
+
+.card-show {
+  padding: 16px;
+  margin-top: 16px;
+  border-radius: 4px;
+  background-color: white;
+}
+
+.card-show-header {
+  display: flex;
+  justify-content: space-between;
 }
