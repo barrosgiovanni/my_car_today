@@ -1,5 +1,5 @@
 class CarsController < ApplicationController
-skip_before_action :authenticate_user!, only: [:index, :show]
+  skip_before_action :authenticate_user!, only: [:index :show]
 
   def index
     @cars = Car.all
@@ -8,6 +8,7 @@ skip_before_action :authenticate_user!, only: [:index, :show]
 
   def show
     @car = Car.find(params[:id])
+    @booking = Booking.new
   end
 
   def new
