@@ -1,27 +1,7 @@
-<div class="container py-5">
-  <div class="row">
-    <div class="col-12 col-md-6 offset-lg-3">
-      <div class="bg-white rounded p-3 shadow">
-        <h3>Let's booking a car</h3>
-        <%= simple_form_for [@car, @booking] do |f| %>
-          <%= f.input :car_id, placeholder: "What's car do you want?" %>
-          <%= f.association :car, prompt: "Select a car" %>
+<div class="headings">
+  <h2>New Booking</h2>
 
-
-          <%= f.input :pick_up_date, placeholder: "Choice a day to starts the rent" %>
-          <%= f.input :drop_of_date, placeholder: "Choice a day to finish the rent" %>
-          <%= f.association :booking, prompt: "Choice a date", input_html: {data: {controller: "tom-select"}} %>
-
-
-          <%= f.input :location, placeholder: "Where do you want meet the car?" %>
-          <%= f.association :booking, prompt: "Choice a location to meet", input_html: {data: {controller: "tom-select"}} %>
-
-
-          <%= f.input :status, placeholder: "Booking Status" %>
-          <%= f.association :booking, prompt: "Status", input_html: {data: {controller: "tom-select"}} %>
-          <%= f.submit class: "btn btn-flat" %>
-        <% end %>
-      </div>
-    </div>
-  </div>
+  <%= render 'form', booking: @booking, car: @car %>
 </div>
+
+<%= link_to "Back to all cars", cars_path %>
