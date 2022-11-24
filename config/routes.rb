@@ -5,5 +5,10 @@ Rails.application.routes.draw do
   resources :cars, only: %i[home index show new create] do
     resources :bookings, only: %i[new create]
   end
-  # post "booking/incoming", to: 'booking#accept_or_reject', as: 'incoming'
+
+  resources :bookings, only: %i[index] do
+    collection do
+      get :cars_host
+    end
+  end
 end
