@@ -5,4 +5,6 @@ Rails.application.routes.draw do
   resources :cars, only: %i[home index show new create] do
     resources :bookings, only: %i[new create]
   end
+
+  resources :bookings, only: %i[index]
 end

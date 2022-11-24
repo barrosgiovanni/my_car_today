@@ -8,15 +8,13 @@ class Booking < ApplicationRecord
   validates :status, presence: true
 
   # ACCEPT OR REJECT BOOKING #
-  enum status: { pending: 0, confirmed: 0, rejected:0 }
+  enum status: { pending: 0, confirmed: 1, rejected: 2 }
 
   def confirm!
-    self.status = "confirmed"
-    self.save!
+    self.update(status: 1)
   end
 
   def reject!
-    self.status = "rejected"
-    self.save!
+    self.update(status: 2)
   end
 end
