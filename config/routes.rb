@@ -11,4 +11,7 @@ Rails.application.routes.draw do
       get :cars_host
     end
   end
+
+  put "confirm_booking/:id", as: :confirm_booking, to: "bookings#confirm"
+  put "reject_booking/:id", as: :reject_booking, to: "bookings#reject"
 end

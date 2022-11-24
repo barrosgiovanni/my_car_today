@@ -3,24 +3,29 @@
   <p>Look all bookings do you have to your cars</p>
 </div>
 
-<div class="cards-container">
+<div class="cards-container" style= "padding-left: 5%">
 
     <div class="cards">
 
       <% @bookings.each do |booking| %>
 
-        <%= link_to cars_host_bookings_path, class: "card-link" do %>
+        <div class="card" style= "width: 18rem">
+          <%= cl_image_tag booking.car.photo.key, class: "card-img", crop: :fill %>
+          <div class="card-body">
+          <p><%= booking.pick_up_date %></p>
+          <p><%= booking.drop_of_date %></p>
+          <p><%= booking.location %></p>
+          <p><%= booking.status %></p>
 
-          <div class="card" style= "width: 18rem;">
-            <%= cl_image_tag booking.car.photo.key, class: "card-img", crop: :fill %>
-            <div class="card-body">
-              <p><%= booking.pick_up_date %></p>
-              <p><%= booking.drop_of_date %></p>
-              <p><%= booking.location %></p>
-              <p><%= booking.status %></p>
+          <div>
+            <div>
+              <a class="button" style="float: right; vertical-align: middle" >
+              <%= button_to "Confirm", confirm_booking_path(booking), params: {booking: booking}, method: :put %> </a></div>
+              <a class="button" style="float: center; vertical-align: middle" >
+              <%= button_to "Reject", reject_booking_path(booking), params: {booking: booking}, method: :put %> </a></div>
             </div>
-          </div>
-        <% end %>
+          <p>
+        </div>
 
       <% end %>
 
