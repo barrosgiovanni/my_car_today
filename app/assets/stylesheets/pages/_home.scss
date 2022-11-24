@@ -28,9 +28,6 @@
   font-weight: bold;
 }
 
-.card {
-  margin: 30px;
-}
 
 .col-md-4 {
   margin: 25px;
@@ -63,8 +60,8 @@
 }
 .cards {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-  grid-gap: 20px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 16px;
   border-radius: 30px;
 }
 

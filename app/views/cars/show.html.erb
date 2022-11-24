@@ -1,4 +1,5 @@
 <div class="container">
+
   <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path @car.photo.key%>);">
     <a class="btn btn-flat" href="#"></a>
   </div>
@@ -15,11 +16,19 @@
         <%= render 'bookings/form', car: @car, booking: @booking %>
       </div>
       <% if user_signed_in? %>
-        <%= link_to("edit your car", edit_car_path(@car)) %>
+        <% if current_user == @car.user %>
+            <%= link_to("edit your car", edit_car_path(@car)) %>
+            <%= link_to "Delete", car_path(@car), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+        <% end %>
       <% end %>
+      
     </div>
-    <div class="col-4" data-controller="map" data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>" id='map' style='width: 400px; height: 300px;'>
+    
+  <div class="col-4" data-controller="map" data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>" id='map' style='width: 400px; height: 300px;'>
 
-    </div>
   </div>
+    
+  </div>
+
+
 </div>
