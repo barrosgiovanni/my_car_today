@@ -3,7 +3,6 @@ class User < ApplicationRecord
   has_many :cars, dependent: :destroy
   has_many :bookings_as_owner, through: :cars, source: :bookings
 
-  validates :email, presence: true, uniqueness: true
   validates :first_name, presence: true
   validates :last_name, presence: true
 
