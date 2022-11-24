@@ -12,4 +12,7 @@
     </div>
      <%= render 'bookings/form', car: @car, booking: @booking %>
   </div>
+  <% if user_signed_in? %>
+    <%= link_to("edit your car", edit_car_path(@car)) %>
+  <% end %>
 </div>
