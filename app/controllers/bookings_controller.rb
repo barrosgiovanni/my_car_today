@@ -20,9 +20,14 @@ class BookingsController < ApplicationController
     end
   end
 
-  # redirect to views/booking/index where we have all user_id booking list
+  # redirect to views/booking/index where we have all booking list to a user_id like a guest
   def index
     @bookings = Booking.where("user_id = ?", current_user.id)
+  end
+
+  # redirect to views/booking/cars_host where we have all bookings to user_id cars like a host
+  def cars_host
+    @bookings = current_user.bookings_as_owner
   end
 
   def destroy

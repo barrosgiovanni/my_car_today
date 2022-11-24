@@ -1,6 +1,6 @@
 <div class="headings">
-  <h1>My booking list</h1>
-  <p>Look all your bookings here!</p>
+  <h1>My cars booking list</h1>
+  <p>Look all bookings do you have to your cars</p>
 </div>
 
 <div class="cards-container">
@@ -9,7 +9,7 @@
 
       <% @bookings.each do |booking| %>
 
-        <%= link_to bookings_path, class: "card-link" do %>
+        <%= link_to cars_host_bookings_path, class: "card-link" do %>
 
           <div class="card" style= "width: 18rem;">
             <%= cl_image_tag booking.car.photo.key, class: "card-img", crop: :fill %>
@@ -21,7 +21,6 @@
             </div>
           </div>
         <% end %>
-
 
       <% end %>
 

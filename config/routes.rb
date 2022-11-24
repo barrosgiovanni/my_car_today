@@ -6,5 +6,9 @@ Rails.application.routes.draw do
     resources :bookings, only: %i[new create]
   end
 
-  resources :bookings, only: %i[index]
+  resources :bookings, only: %i[index] do
+    collection do
+      get :cars_host
+    end
+  end
 end
