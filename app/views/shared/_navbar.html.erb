@@ -1,6 +1,6 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
-    <%= link_to "#", class: "navbar-brand" do %>
+    <%= link_to "http://localhost:3000/", class: "navbar-brand" do %>
       <%= image_tag "https://png.pngtree.com/png-vector/20190507/ourmid/pngtree-vector-car-icon-png-image_1024782.jpg" %>
     <% end %>
 
@@ -10,24 +10,25 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
+      <li class="nav-item">
+        <%= link_to "List your Car", new_car_path, class: "nav-link navbar-menu" %>
+      </li>
         <% if user_signed_in? %>
           <li class="nav-item active">
-            <%= link_to "Home", "#", class: "nav-link" %>
+            <%= link_to "Home", "http://localhost:3000/", class: "nav-link nav-home-btn" %>
           </li>
-          <li class="nav-item">
-            <%= link_to "Bookings", "#", class: "nav-link" %>
-          </li>
+
           <li class="nav-item dropdown">
             <%= image_tag "https://w7.pngwing.com/pngs/798/436/png-transparent-computer-icons-user-profile-avatar-profile-heroes-black-profile.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "My bookings", bookings_path, class: "dropdown-item" %>
-              <%= link_to "My cars bookings", cars_host_bookings_path, class: "dropdown-item" %>
+              <%= link_to "My Bookings", bookings_path, class: "dropdown-item" %>
+              <%= link_to "My Listings", cars_host_bookings_path, class: "dropdown-item" %>
               <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
             </div>
           </li>
         <% else %>
           <li class="nav-item">
-            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+            <%= link_to "Login", new_user_session_path, class: "nav-link nav-login-btn" %>
           </li>
         <% end %>
       </ul>
