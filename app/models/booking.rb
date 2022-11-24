@@ -1,7 +1,7 @@
 class Booking < ApplicationRecord
   belongs_to :user
   belongs_to :car
-
+  validates :user_id, uniqueness: { scope: :car_id }
   # enum status: [ :pending, :confirmed, :rejected ]
 
   # def notify_host(force = true)
