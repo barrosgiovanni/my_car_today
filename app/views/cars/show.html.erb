@@ -4,15 +4,21 @@
   </div>
   <div class="card-show">
     <div class="card-show-infos">
-    <div class="card-show-header">
-      <h2><%= @car.model.capitalize %> <%= @car.brand.capitalize  %></h2>
-      <h2 class="card-show-pricing">£<%= @car.price %></h2>
-    </div>
-      <p>Category: <%= @car.category.capitalize%> | Year: <%=@car.year%> | Color: <%=@car.color.capitalize%> </p>
-    </div>
+        <div class="card-show-header">
+          <h2><%= @car.model.capitalize %> <%= @car.brand.capitalize  %></h2>
+          <h2 class="card-show-pricing">£<%= @car.price %></h2>
+        </div>
+        <p>Category: <%= @car.category.capitalize%> | Year: <%=@car.year%> | Color: <%=@car.color.capitalize%> </p>
+      </div>
      <%= render 'bookings/form', car: @car, booking: @booking %>
+    </div>
   </div>
   <% if user_signed_in? %>
-    <%= link_to("edit your car", edit_car_path(@car)) %>
+    <% if current_user == @car.user %>
+      <div class="d-grid gap-2">
+          <%= link_to("edit your car", edit_car_path(@car)) %>
+          <%= link_to "Delete", car_path(@car), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+      </div>
+    <% end %>
   <% end %>
 </div>
