@@ -2,17 +2,23 @@
   <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path @car.photo.key%>);">
     <a class="btn btn-flat" href="#"></a>
   </div>
-  <div class="card-show">
-    <div class="card-show-infos">
-    <div class="card-show-header">
-      <h2><%= @car.model.capitalize %> <%= @car.brand.capitalize  %></h2>
-      <h2 class="card-show-pricing">£<%= @car.price %></h2>
+  <div class="row">
+    <div class="col-8">
+      <div class="card-show">
+        <div class="card-show-infos">
+          <div class="card-show-header">
+            <h2><%= @car.model.capitalize %> <%= @car.brand.capitalize  %></h2>
+            <h2 class="card-show-pricing">£<%= @car.price %></h2>
+          </div>
+          <p>Category: <%= @car.category.capitalize%> | Year: <%=@car.year%> | Color: <%=@car.color.capitalize%> </p>
+        </div>
+        <%= render 'bookings/form', car: @car, booking: @booking %>
+      </div>
+      <% if user_signed_in? %>
+        <%= link_to("edit your car", edit_car_path(@car)) %>
+      <% end %>
     </div>
-      <p>Category: <%= @car.category.capitalize%> | Year: <%=@car.year%> | Color: <%=@car.color.capitalize%> </p>
-    </div>
-     <%= render 'bookings/form', car: @car, booking: @booking %>
+    <div class="col-4"></div>
   </div>
-  <% if user_signed_in? %>
-    <%= link_to("edit your car", edit_car_path(@car)) %>
-  <% end %>
+
 </div>
