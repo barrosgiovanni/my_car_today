@@ -1,0 +1,30 @@
+<div class="headings">
+  <h1>My booking list</h1>
+  <p>Look all your bookings here!</p>
+</div>
+
+<div class="cards-container">
+
+    <div class="cards">
+
+      <% @bookings.each do |booking| %>
+
+        <%= link_to bookings_path, class: "card-link" do %>
+
+          <div class="card" style= "width: 18rem;">
+            <%= cl_image_tag booking.car.photo.key, class: "card-img", crop: :fill %>
+            <div class="card-body">
+              <p><%= booking.pick_up_date %></p>
+              <p><%= booking.drop_of_date %></p>
+              <p><%= booking.location %></p>
+              <p><%= booking.status %></p>
+            </div>
+          </div>
+        <% end %>
+
+
+      <% end %>
+
+    </div>
+
+</div>
