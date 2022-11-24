@@ -1,6 +1,6 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: rgb(255, 255, 255);
+  background: white;
   border-color: black;
 }
 
@@ -11,4 +11,19 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+}
+
+.navbar-menu {
+  margin-right: 20px;
+  font-weight: bold;
+}
+
+.nav-login-btn {
+  margin-right: 20px;
+  font-weight: bold;
+}
+
+.nav-home-btn {
+  margin-right: 20px;
+  font-weight: bold;
 }

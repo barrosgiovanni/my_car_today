@@ -9,12 +9,25 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.car = @car
     @booking.user = current_user
+
     @booking.status = 'pending'
     if @booking.save!
-      redirect_to root_path, notice: "Booking successfully created!"
+      # redirect to views/booking/index where we have all user_id booking list
+      redirect_to bookings_path, notice: "Booking successfully created!"
     else
-      render :new
+      # redirect to views/cars/index where we have all cars to rent
+      render :new, notice: "Unfortonally, your booking is reject. You can choice other car!"
     end
+  end
+
+  # redirect to views/booking/index where we have all booking list to a user_id like a guest
+  def index
+    @bookings = Booking.where("user_id = ?", current_user.id)
+  end
+
+  # redirect to views/booking/cars_host where we have all bookings to user_id cars like a host
+  def cars_host
+    @bookings = current_user.bookings_as_owner
   end
 
   def destroy
@@ -26,6 +39,6 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:location, :pick_up_date, :drop_of_date)
+    params.require(:booking).permit(:location, :pick_up_date, :drop_of_date, :status)
   end
 end
