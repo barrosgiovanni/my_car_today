@@ -30,6 +30,18 @@ class BookingsController < ApplicationController
     @bookings = current_user.bookings_as_owner
   end
 
+  def confirm
+    booking = Booking.find(params[:id])
+    booking.confirm!
+    redirect_to cars_host_bookings_path, notice: "request confirmed!"
+  end
+
+  def reject
+    booking = Booking.find(params[:id])
+    booking.reject!
+    redirect_to cars_host_bookings_path, notice: "request rejected!"
+  end
+
   def destroy
     @booking = Booking.find(params[:id])
     @booking.destroy

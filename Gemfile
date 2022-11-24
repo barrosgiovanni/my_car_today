@@ -83,3 +83,6 @@ end
 # to use cloudinary keys
 gem "dotenv-rails", groups: [:development, :test]
 gem "cloudinary"
+
+# to use geocoder
+gem "geocoder"
