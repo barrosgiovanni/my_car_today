@@ -19,7 +19,7 @@ class CarsController < ApplicationController
     @car.user = current_user
     @car.save
     redirect_to car_path(@car)
-   end
+  end
 
   def edit
     @car = Car.find(params[:id])
@@ -33,6 +33,7 @@ class CarsController < ApplicationController
   end
 
   def destroy
+    @car = Car.find(params[:id])
     @car.destroy
     redirect_to cars_path, status: :see_other
   end
