@@ -10,7 +10,8 @@
         <div class="card-show-infos">
 
           <div class="card-show-header">
-            <h2><%= @car.model.capitalize %> <%= @car.brand.capitalize %></h2>
+
+            <h2><%= @car.brand.capitalize %> <%= @car.model.capitalize  %></h2>
             <h2 class="card-show-pricing">£<%= @car.price %></h2>
           </div>
 
@@ -24,8 +25,10 @@
 
       <% if user_signed_in? %>
         <% if current_user == @car.user %>
-            <%= link_to("edit your car", edit_car_path(@car)) %>
-            <%= link_to "Delete", car_path(@car), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+        <div class="buttons">
+          <%= button_to "edit car", edit_car_path(@car), method: :get, id: "edit-btn" %>
+          <%= button_to "Delete", car_path(@car), id: "delete-btn", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+        </div>
         <% end %>
       <% end %>
 
@@ -39,4 +42,5 @@
       </div>
     </div>
   </div>
+
 </div>

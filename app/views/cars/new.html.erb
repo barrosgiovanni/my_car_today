@@ -1,8 +1,7 @@
-<h3 class="text-center mt-5 mb-4">Fill the form and list your car!</h3>
-
+<h3 class="text-center mt-5 mb-4">Fill the form to create your car!</h3>
 <div class="container">
   <div class="row d-flex justify-content-center">
-    <div class="col-4">
+    <div class="col-4" id="create-form">
       <%= simple_form_for(@car) do |f| %>
         <%= f.input :price %>
         <%= f.input :brand %>
@@ -11,10 +10,14 @@
         <%= f.input :color %>
         <%= f.input :category %>
         <%= f.input :photo, as: :file %>
-        <%= f.submit "Submit!" %>
+        <%= f.submit "Create Car" %>
       <% end %>
     </div>
   </div>
+</div>
+
+<div class="text-start ms-5">
+  <%= link_to "Back to my list cars", list_cars_cars_path %>
 </div>
 
 <div class="text-start ms-5">

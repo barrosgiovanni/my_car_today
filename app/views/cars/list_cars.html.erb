@@ -1,0 +1,26 @@
+<div class="headings">
+  <h1>My list cars </h1>
+  <p>Look all list cars do you have to rent </p>
+</div>
+
+<div class="cards-container" style= "padding-left: 5%">
+
+  <div class="cards">
+
+    <% @cars.each do |car| %>
+
+      <div class="card" style= "width: 18rem;">
+        <%= cl_image_tag car.photo.key, class: "card-img", crop: :fill %>
+        <div class="card-body">
+        <p><%= car.brand %> <%= car.model %></p>
+        <p><%= car.year %></p>
+        <p><%= car.category %></p>
+        <p>$<%= car.price %> per day</p>
+        </div>
+      </div>
+
+    <% end %>
+
+  </div>
+
+</div>
