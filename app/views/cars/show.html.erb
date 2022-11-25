@@ -3,18 +3,26 @@
   <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path @car.photo.key%>);">
     <a class="btn btn-flat" href="#"></a>
   </div>
+
   <div class="row">
-    <div class="col-8">
+    <div class="col-6">
       <div class="card-show">
         <div class="card-show-infos">
+
           <div class="card-show-header">
+
             <h2><%= @car.brand.capitalize %> <%= @car.model.capitalize  %></h2>
             <h2 class="card-show-pricing">£<%= @car.price %></h2>
           </div>
+
           <p>Category: <%= @car.category.capitalize%> | Year: <%=@car.year%> | Color: <%=@car.color.capitalize%> </p>
+
         </div>
+
         <%= render 'bookings/form', car: @car, booking: @booking %>
+
       </div>
+
       <% if user_signed_in? %>
         <% if current_user == @car.user %>
         <div class="buttons">
@@ -26,8 +34,13 @@
 
     </div>
 
-   <!--<div class="col-4" data-controller="map" data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>" id='map' style='width: 400px; height: 300px;'> -->
-
+    <div class="col-6 mt-3">
+      <div data-controller="map"
+            data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
+            data-map-marker-value="<%= @marker.to_json %>"
+            id='map' class="map-display" style='height: 100%;'>
+      </div>
+    </div>
   </div>
 
 </div>

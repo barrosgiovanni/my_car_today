@@ -100,6 +100,10 @@
   justify-content: space-between;
 }
 
+
+.map-display {
+  border-radius: 8px;
+
 #delete-btn {
   border-radius: 4px;
   border: 1px solid rgba(0, 0, 0, 0.459);
@@ -131,4 +135,5 @@
   .form-control{
     border-radius: 4%;
   }
+
 }

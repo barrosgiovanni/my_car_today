@@ -27,47 +27,47 @@ uno.photo.attach(io: file, filename: "uno.png", content_type: "image/png")
 uno.save!
 
 file = URI.open("https://www.localiza.com/brasil-site/geral/Frota/SANX.png")
-sandero = Car.new(price: "50", brand: "Renault", model: "Sandero", year: "2020", color: "Blue", category: "Compacto", address: "184 Visconde de Piraja, Rio de Janeiro", user_id: brad.id)
+sandero = Car.new(price: "50", brand: "Renault", model: "Sandero", year: "2020", color: "Blue", category: "Compacto", address: "142 Visconde de Piraja, Rio de Janeiro", user_id: brad.id)
 sandero.photo.attach(io: file, filename: "sandero.png", content_type: "image/png")
 sandero.save!
 
 file = URI.open("https://www.localiza.com/brasil-site/geral/Frota/E208.png")
-e208 = Car.new(price: "100", brand: "Pegeout", model: "E-208", year: "2020", color: "Orange", category: "Compacto", address: "56 Teixeira de Melo, Rio de Janeiro", user_id: brad.id)
+e208 = Car.new(price: "100", brand: "Pegeout", model: "E-208", year: "2020", color: "Orange", category: "Compacto", address: "142 Visconde de Piraja, Rio de Janeiro", user_id: brad.id)
 e208.photo.attach(io: file, filename: "e208.png", content_type: "image/png")
 e208.save!
 
 file = URI.open("https://www.localiza.com/brasil-site/geral/Frota/HB2X.png")
-hb20 = Car.new(price: "100", brand: "Hyundai", model: "HB20", year: "2020", color: "Cinza", category: "Compacto", address: "42 Teixeira de Melo, Rio de Janeiro", user_id: kim.id)
+hb20 = Car.new(price: "100", brand: "Hyundai", model: "HB20", year: "2020", color: "Cinza", category: "Compacto", address: "142 Visconde de Piraja, Rio de Janeiro", user_id: kim.id)
 hb20.photo.attach(io: file, filename: "hb20.png", content_type: "image/png")
 hb20.save!
 
 file = URI.open("https://www.localiza.com/brasil-site/geral/Frota/POLA.png")
-polo = Car.new(price: "100", brand: "VW", model: "Polo", year: "2020", color: "Silver", category: "Compacto", address: "135 Visconde de Piraja, Rio de Janeiro", user_id: kim.id)
+polo = Car.new(price: "100", brand: "VW", model: "Polo", year: "2020", color: "Silver", category: "Compacto", address: "142 Visconde de Piraja, Rio de Janeiro", user_id: kim.id)
 polo.photo.attach(io: file, filename: "polo.png", content_type: "image/png")
 polo.save!
 
 file = URI.open("https://www.localiza.com/brasil-site/geral/Frota/KACR.png")
-ka = Car.new(price: "100", brand: "Ford", model: "Ka", year: "2020", color: "White", category: "Compacto", address: "173 Visconde de Piraja, Rio de Janeiro", user_id: kim.id)
+ka = Car.new(price: "100", brand: "Ford", model: "Ka", year: "2020", color: "White", category: "Compacto", address: "142 Visconde de Piraja, Rio de Janeiro", user_id: kim.id)
 ka.photo.attach(io: file, filename: "ka.png", content_type: "image/png")
 ka.save!
 
 file = URI.open("https://www.localiza.com/brasil-site/geral/Frota/DUST.png")
-dust = Car.new(price: "300", brand: "Renault", model: "Dust", year: "2020", color: "White", category: "Suv", address: "200 Visconde de Piraja, Rio de Janeiro", user_id: avril.id)
+dust = Car.new(price: "300", brand: "Renault", model: "Dust", year: "2020", color: "White", category: "Suv", address: "142 Visconde de Piraja, Rio de Janeiro", user_id: avril.id)
 dust.photo.attach(io: file, filename: "dust.png", content_type: "image/png")
 dust.save!
 
 file = URI.open("https://www.localiza.com/brasil-site/geral/Frota/RENE.png")
-renegade = Car.new(price: "300", brand: "Jeep", model: "Renegade", year: "2020", color: "Silver", category: "Suv", address: "56 Teixeira de Melo, Rio de Janeiro", user_id: avril.id)
+renegade = Car.new(price: "300", brand: "Jeep", model: "Renegade", year: "2020", color: "Silver", category: "Suv", address: "142 Visconde de Piraja, Rio de Janeiro", user_id: avril.id)
 renegade.photo.attach(io: file, filename: "renegade.png", content_type: "image/png")
 renegade.save!
 
 file = URI.open("https://www.localiza.com/brasil-site/geral/Frota/ECOW.png")
-ecosport = Car.new(price: "300", brand: "Ford", model: "Ecosport", year: "2020", color: "White", category: "Suv", address: "300 Visconde de Piraja, Rio de Janeiro", user_id: john.id)
+ecosport = Car.new(price: "300", brand: "Ford", model: "Ecosport", year: "2020", color: "White", category: "Suv", address: "142 Visconde de Piraja, Rio de Janeiro", user_id: john.id)
 ecosport.photo.attach(io: file, filename: "ecosport.png", content_type: "image/png")
 ecosport.save!
 
 file = URI.open("https://www.localiza.com/brasil-site/geral/Frota/CAPU.png")
-captur = Car.new(price: "300", brand: "Renault", model: "Captur", year: "2020", color: "Red", category: "Suv", address: "350 Visconde de Piraja, Rio de Janeiro", user_id: john.id)
+captur = Car.new(price: "300", brand: "Renault", model: "Captur", year: "2020", color: "Red", category: "Suv", address: "142 Visconde de Piraja, Rio de Janeiro", user_id: john.id)
 captur.photo.attach(io: file, filename: "captur.png", content_type: "image/png")
 captur.save!
 
