@@ -3,28 +3,24 @@
   <p>Look all list cars do you have to rent </p>
 </div>
 
-<div class="cards-container">
+<div class="cards-container" style= "padding-left: 5%">
 
-    <div class="cards">
+  <div class="cards">
 
-      <% @cars.each do |car| %>
+    <% @cars.each do |car| %>
 
-        <%= link_to car_path(car), class: "card-link" do %>
+      <div class="card" style= "width: 18rem;">
+        <%= cl_image_tag car.photo.key, class: "card-img", crop: :fill %>
+        <div class="card-body">
+        <p><%= car.brand %> <%= car.model %></p>
+        <p><%= car.year %></p>
+        <p><%= car.category %></p>
+        <p>$<%= car.price %> per day</p>
+        </div>
+      </div>
 
-          <div class="card" style= "width: 18rem;">
-            <%= cl_image_tag car.photo.key, class: "card-img", crop: :fill %>
-            <div class="card-body">
-              <p><%= car.brand %> <%= car.model %></p>
-              <p><%= car.year %></p>
-              <p><%= car.category %></p>
-              <p>$<%= car.price %> per day</p>
-            </div>
-          </div>
+    <% end %>
 
-        <% end %>
-
-      <% end %>
-
-    </div>
+  </div>
 
 </div>
