@@ -12,6 +12,6 @@ class Car < ApplicationRecord
   validates :price, presence: true
 
   # add to not repeat the process when we change different columns ex. model, colour...
-  geocoded_by :address
-  after_validation :geocode, if: :will_save_change_to_address?
+#   geocoded_by :address
+#   after_validation :geocode, if: :will_save_change_to_address?
 end
