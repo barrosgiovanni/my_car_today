@@ -23,7 +23,7 @@ class CarsController < ApplicationController
     @car = Car.new(car_params)
     @car.user = current_user
     @car.save
-    redirect_to car_path(@car)
+    redirect_to car_path(@car), notice: "Car successfully created!"
   end
 
   def edit
@@ -35,6 +35,11 @@ class CarsController < ApplicationController
     @car.update(car_params)
     @car.save
     redirect_to cars_path
+  end
+
+  # redirect to views/cars/list_cars where we have all listing cars from a user_id
+  def list_cars
+    @cars = current_user.cars_as_owner
   end
 
   def destroy
