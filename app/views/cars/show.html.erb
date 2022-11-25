@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" style="margin-top: 160px;">
 
   <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path @car.photo.key%>);">
     <a class="btn btn-flat" href="#"></a>
@@ -26,8 +26,8 @@
       <% if user_signed_in? %>
         <% if current_user == @car.user %>
         <div class="buttons">
-          <%= button_to "edit car", edit_car_path(@car), method: :get, id: "edit-btn" %>
-          <%= button_to "Delete", car_path(@car), id: "delete-btn", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+          <%= button_to "Edit car", edit_car_path(@car), method: :get, id: "edit-btn" %>
+          <%= button_to "Delete", car_path(@car), id:"delete-btn", method: :delete, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
         </div>
         <% end %>
       <% end %>

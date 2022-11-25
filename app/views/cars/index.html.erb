@@ -1,19 +1,19 @@
 
-<div class="container">
+<div class="container" style="margin-top: 150px;">
 
   <div class="headings">
-  
+
     <h1>Which car do you want to be yours today?</h1>
     <p>Choose between one of the many options!</p>
-    
+
   </div>
 
       <div class="cards">
 
         <% @cars.each do |car| %>
-        
+
           <%= link_to car_path(car), class: "card-link" do %>
-          
+
             <div class="card">
               <%= cl_image_tag car.photo.key, class: "card-img", crop: :fill %>
               <div class="card-body">
@@ -23,10 +23,10 @@
                 <p>$<%= car.price %> per day</p>
               </div>
             </div>
-            
+
           <% end %>
-          
+
         <% end %>
-        
+
       </div>
 </div>
