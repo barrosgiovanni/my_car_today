@@ -8,11 +8,13 @@ class CarsController < ApplicationController
   def show
     @car = Car.find(params[:id])
     @booking = Booking.new
-    @markers = @car.geocoded
-    {
-      lat: car.latitude,
-      lng: car.longitude
-    }
+
+    # The `geocoded` scope filters only flats with coordinates
+    @marker = {
+        lat: @car.latitude,
+        lng: @car.longitude
+        # info_window: render_to_string(partial: "info_window", locals: {car: car})
+      }
   end
 
   def new
