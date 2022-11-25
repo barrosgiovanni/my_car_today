@@ -34,7 +34,7 @@ class CarsController < ApplicationController
     @car = Car.find(params[:id])
     @car.update(car_params)
     @car.save
-    redirect_to cars_path
+    redirect_to cars_path, notice: "Car successfully update"
   end
 
   # redirect to views/cars/list_cars where we have all listing cars from a user_id
