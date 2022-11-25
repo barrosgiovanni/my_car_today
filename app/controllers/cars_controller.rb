@@ -39,7 +39,7 @@ class CarsController < ApplicationController
 
   # redirect to views/cars/list_cars where we have all listing cars from a user_id
   def list_cars
-    @cars = current_user.cars_as_owner
+    @cars = current_user.cars
   end
 
   def destroy
