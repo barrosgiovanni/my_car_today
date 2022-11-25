@@ -8,11 +8,13 @@ class CarsController < ApplicationController
   def show
     @car = Car.find(params[:id])
     @booking = Booking.new
-    # @markers = @car.geocoded
-    # {
-    # lat: car.latitude,
-    # lng: car.longitude
-    # }
+
+    # The `geocoded` scope filters only flats with coordinates
+    @marker = {
+        lat: @car.latitude,
+        lng: @car.longitude
+        # info_window: render_to_string(partial: "info_window", locals: {car: car})
+      }
   end
 
   def new
@@ -23,7 +25,7 @@ class CarsController < ApplicationController
     @car = Car.new(car_params)
     @car.user = current_user
     @car.save
-    redirect_to car_path(@car)
+    redirect_to car_path(@car), notice: "Car successfully created!"
   end
 
   def edit
@@ -34,7 +36,12 @@ class CarsController < ApplicationController
     @car = Car.find(params[:id])
     @car.update(car_params)
     @car.save
-    redirect_to cars_path
+    redirect_to cars_path, notice: "Car successfully update"
+  end
+
+  # redirect to views/cars/list_cars where we have all listing cars from a user_id
+  def list_cars
+    @cars = current_user.cars
   end
 
   def destroy
